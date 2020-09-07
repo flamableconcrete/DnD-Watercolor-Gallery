@@ -187,8 +187,12 @@ ignore_files = []
 # index_in_url = False
 
 # A list of links (tuples (title, URL))
-links = [('Example link', 'http://example.org'),
-         ('Another link', 'http://example.org')]
+links = [
+    ('Original Reddit Thread', 'https://www.reddit.com/r/UnearthedArcana/comments/83w44y/42_full_page_watercolor_stains_for_the_homebrewery/'),
+    ('Gmbinder Guide', 'https://www.gmbinder.com/share/-L4Yt8ZSxmhwqt--yNRT'),
+    ('Homebrewery Guide', 'https://homebrewery.naturalcrit.com/share/SkKsdJmKf'),
+    ('Website Source', 'https://github.com/flamableconcrete/DnD-Watercolor-Gallery')
+]
 
 # Google Analytics tracking code (UA-xxxx-x)
 # google_analytics = ''
