@@ -22,7 +22,8 @@ source = 'albums'
 # Theme :
 # - colorbox (default), galleria, photoswipe, or the path to a custom theme
 # directory
-theme = 'colorbox'
+# theme = 'colorbox'
+theme = 'my-sigal-theme'
 
 # Author. Used in the footer of the pages and in the author meta tag.
 # author = ''
@@ -96,10 +97,10 @@ img_size = (800, 600)
 # Thumbnail size (default: (200, 150))
 # For the galleria theme, use 280 px for the width
 # For the colorbox and photoswipe theme, use 200 px for the width
-thumb_size = (280, 210)
+thumb_size = (200, 267)
 
 # Crop the image to fill the box
-# thumb_fit = True
+thumb_fit = False
 
 # When using thumb_fit, specifies what we should crop
 # for usage see

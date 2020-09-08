@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  {% set numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"] %}
+  {% set column_size = settings.colorbox_column_size %}
+  {% set nb_columns = (9 / column_size)|int %}
+  {% set column_size_t = numbers[column_size] %}
+
+  {% for alb in album.albums %}
+    {% if loop.index % nb_columns == 1 %}
+    <div id="albums" class="row">
+    {% endif%}
+      <div class="{{ column_size_t }} columns thumbnail">
+        <a href="{{ alb.url }}">
+          <img src="{{ alb.thumbnail }}" class="album_thumb"
+              alt="{{ alb.title }}" title="{{ alb.title }}" /></a>
+        <span class="album_title">{{ alb.title }}</span>
+      </div>
+    {% if loop.last or loop.index % nb_columns == 0 %}
+    </div>
+    {% endif%}
+  {% endfor %}
+{% endblock %}
