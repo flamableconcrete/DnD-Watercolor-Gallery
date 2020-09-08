@@ -11,7 +11,29 @@
 #cboxTitle{margin:0;}
 #cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
 #cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
-.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;}
+.cboxPhoto{
+    float:left;
+    margin:auto;
+    border:0;
+    display:block;
+    max-width:none;
+    -ms-interpolation-mode:bicubic;
+
+    /* This is the only part I modified to have a checkerboard pattern for the transparency
+     But the checkerboard is too in your face, so I'm doing a black background instead for now
+    */
+    background: #000;
+    /*
+    background-image:
+    linear-gradient(45deg, #5D5D5D 25%, transparent 25%),
+    linear-gradient(-45deg, #5D5D5D 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #5D5D5D 75%),
+    linear-gradient(-45deg, transparent 75%, #5D5D5D 75%);
+
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    */
+}
 .cboxIframe{width:100%; height:100%; display:block; border:0; padding:0; margin:0;}
 #colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
 
