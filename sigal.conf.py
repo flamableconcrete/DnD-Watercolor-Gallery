@@ -39,7 +39,8 @@ theme = 'my-sigal-theme'
 # ----------------
 
 # Size of resized image (default: (640, 480))
-img_size = (800, 600)
+# img_size = (800, 600)
+img_size = (1076, 816)
 
 # Output format of images (default: None, i.e. use input format)
 # img_format = "JPEG"
