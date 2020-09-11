@@ -190,7 +190,8 @@ ignore_files = []
 
 # A list of links (tuples (title, URL))
 links = [
-    ('Original Reddit Thread', 'https://www.reddit.com/r/UnearthedArcana/comments/83w44y/42_full_page_watercolor_stains_for_the_homebrewery/'),
+    ('Original Reddit Thread (2018)', 'https://www.reddit.com/r/UnearthedArcana/comments/83w44y/42_full_page_watercolor_stains_for_the_homebrewery/'),
+    ('New Reddit Thread (2020)', 'https://www.reddit.com/r/UnearthedArcana/comments/iqpmek/301_full_page_watercolor_stains_for/'),
     ('Gmbinder Guide', 'https://www.gmbinder.com/share/-L4Yt8ZSxmhwqt--yNRT'),
     ('Homebrewery Guide', 'https://homebrewery.naturalcrit.com/share/SkKsdJmKf'),
     ('Download all files (.zip file)', 'https://github.com/flamableconcrete/DnD-Watercolor-Gallery/archive/gh-pages.zip'),
