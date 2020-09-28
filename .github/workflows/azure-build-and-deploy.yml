@@ -9,6 +9,12 @@ jobs:
   build_and_deploy_job:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    env:
+      DO_SPACE: ${{ secrets.DO_SPACE }}
+      DO_ACCESS_KEY_ID: ${{ secrets.DO_ACCESS_KEY_ID }}
+      DO_SECRET_ACCESS_KEY: ${{ secrets.DO_SECRET_ACCESS_KEY }}
+      AZURE_STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
+      AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
     steps:
       - name: Checkout git repo
         uses: actions/checkout@v2
