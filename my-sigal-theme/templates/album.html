@@ -70,9 +70,9 @@
 {% endblock %}
 
 {% block footer %}
-  <script src="{{ theme.url }}/js/jquery-2.2.1.min.js"></script>
-  <script src="{{ theme.url }}/js/jquery.colorbox-min.js"></script>
-  <script src="{{ theme.url }}/js/jquery.touchSwipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/jquery.colorbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-touchswipe@1.6.19/jquery.touchSwipe.min.js"></script>
 
   {% if 'sigal.plugins.media_page' in settings.plugins %}
   <script src="{{ theme.url }}/js/app-with-media-page.js"></script>

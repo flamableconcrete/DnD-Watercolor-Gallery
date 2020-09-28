@@ -128,8 +128,13 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# sigal build directory
+# sigal build directories
 _build/
+_compressed_images/
 
 # PyCharm config directory
 .idea/
+
+# raw images
+albums/
+albums.zip

@@ -13,7 +13,7 @@
 
 # Source directory. Can be set here or as the first argument of the `sigal
 # build` command
-source = 'albums'
+source = "albums"
 
 # Destination directory. Can be set here or as the second argument of the
 # `sigal build` command (default: '_build')
@@ -23,7 +23,7 @@ source = 'albums'
 # - colorbox (default), galleria, photoswipe, or the path to a custom theme
 # directory
 # theme = 'colorbox'
-theme = 'my-sigal-theme'
+theme = "my-sigal-theme"
 
 # Author. Used in the footer of the pages and in the author meta tag.
 # author = ''
@@ -32,7 +32,7 @@ theme = 'my-sigal-theme'
 # processing steps (resize, auto-orient, recompress, and any plugin-specific
 # step).
 # Originals will be symlinked if orig_link = True, else they will be copied.
-# use_orig = False
+use_orig = True
 
 # ----------------
 # Image processing (ignored if use_orig = True)
@@ -180,22 +180,30 @@ ignore_files = []
 # -------------
 
 # Write HTML files. If False, sigal will only process the images.
-# write_html = True
+# write_html = False
 
 # Name of the generated HTML files
 # output_filename = 'index.html'
 
 # Add output filename (see above) to the URLs
-# index_in_url = False
+index_in_url = True
 
 # A list of links (tuples (title, URL))
 links = [
-    ('Original Reddit Thread (2018)', 'https://www.reddit.com/r/UnearthedArcana/comments/83w44y/42_full_page_watercolor_stains_for_the_homebrewery/'),
-    ('New Reddit Thread (2020)', 'https://www.reddit.com/r/UnearthedArcana/comments/iqpmek/301_full_page_watercolor_stains_for/'),
-    ('Gmbinder Guide', 'https://www.gmbinder.com/share/-L4Yt8ZSxmhwqt--yNRT'),
-    ('Homebrewery Guide', 'https://homebrewery.naturalcrit.com/share/SkKsdJmKf'),
-    ('Download all files (.zip file)', 'https://github.com/flamableconcrete/DnD-Watercolor-Gallery/archive/gh-pages.zip'),
-    ('Website Source (GitHub)', 'https://github.com/flamableconcrete/DnD-Watercolor-Gallery')
+    (
+        "Original Reddit Thread (2018)",
+        "https://www.reddit.com/r/UnearthedArcana/comments/83w44y/42_full_page_watercolor_stains_for_the_homebrewery/",
+    ),
+    (
+        "New Reddit Thread (2020)",
+        "https://www.reddit.com/r/UnearthedArcana/comments/iqpmek/301_full_page_watercolor_stains_for/",
+    ),
+    ("Gmbinder Guide", "https://www.gmbinder.com/share/-L4Yt8ZSxmhwqt--yNRT"),
+    ("Homebrewery Guide", "https://homebrewery.naturalcrit.com/share/SkKsdJmKf"),
+    (
+        "Website Source (GitHub)",
+        "https://github.com/flamableconcrete/DnD-Watercolor-Gallery",
+    ),
 ]
 
 # Google Analytics tracking code (UA-xxxx-x)
@@ -244,7 +252,7 @@ links = [
 # from this file must be serializable).
 plugins = [
     # 'sigal.plugins.adjust',
-    'sigal.plugins.compress_assets',
+    "sigal.plugins.compress_assets",
     # 'sigal.plugins.copyright',
     # 'sigal.plugins.encrypt',
     # 'sigal.plugins.extended_caching',
@@ -253,7 +261,7 @@ plugins = [
     # 'sigal.plugins.nomedia',
     # 'sigal.plugins.upload_s3',
     # 'sigal.plugins.watermark',
-    'sigal.plugins.zip_gallery',
+    "sigal.plugins.zip_gallery",
 ]
 
 # Adjust the image after resizing it. A default value of 1.0 leaves the images
@@ -264,9 +272,7 @@ plugins = [
 #                   'sharpness': 1.0}
 
 # Settings for compressing static assets
-compress_assets_options = {
-   'method': 'brotli'
-}
+compress_assets_options = {"method": "brotli"}
 
 # Add a copyright text on the image (default: '')
 # copyright = "© An example copyright message"
@@ -289,7 +295,7 @@ compress_assets_options = {
 # '{album.name}.zip'. The final archive will contain all resized or
 # original files (depending on `zip_media_format`).
 # zip_gallery = False   # False or 'archive.zip'
-zip_gallery = '{album.name}.zip'
+zip_gallery = "{album.name}.zip"
 # zip_media_format = 'resized'  # 'resized' or 'orig'
 # zip_skip_if_exists = False # Skip archive generation if archive is
 # already present. Warning: new photos in an album won't be added to archive

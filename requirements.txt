@@ -1,2 +1,7 @@
-sigal==2.1.1
+azure-storage-blob==12.5.0
+black==20.8b1
+boto3==1.15.6
 brotli==1.0.9
+click==7.1.2
+python-dotenv==0.14.0
+sigal==2.1.1

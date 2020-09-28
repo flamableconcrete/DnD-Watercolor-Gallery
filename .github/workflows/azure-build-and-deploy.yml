@@ -1,0 +1,30 @@
+name: Azure Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy_job:
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - name: Checkout git repo
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Get public albums
+        run: python run.py do-download
+      - name: Build website
+        run: sigal build
+      - name: Backup production website
+        run: python run.py azure-backup-website
+      - name: Deploy new site
+        run: python run.py azure-deploy --fresh-start
