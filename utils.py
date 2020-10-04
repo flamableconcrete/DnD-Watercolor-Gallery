@@ -1,5 +1,6 @@
 import mimetypes
 import os
+import sys
 import zipfile
 from pathlib import Path
 
@@ -325,3 +326,23 @@ def zipdir(dir_to_zip, archive_file):
         for root, dirs, files in os.walk(dir_to_zip):
             for file in files:
                 zipf.write(os.path.join(root, file))
+
+
+def remove_empty_folders(path, remove_root=True):
+    """Function to remove empty folders."""
+    if not os.path.isdir(path):
+        return
+
+    # remove empty subfolders
+    files = os.listdir(path)
+    if len(files):
+        for f in files:
+            fullpath = os.path.join(path, f)
+            if os.path.isdir(fullpath):
+                remove_empty_folders(fullpath)
+
+    # if folder empty, delete it
+    files = os.listdir(path)
+    if len(files) == 0 and remove_root:
+        # print("Removing empty folder:", path)
+        os.rmdir(path)

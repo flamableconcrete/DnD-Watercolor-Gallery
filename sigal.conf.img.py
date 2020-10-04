@@ -1,7 +1,6 @@
 source = "albums"
 img_size = (1076, 816)
-thumb_size = (200, 267)
-thumb_fit = False
+make_thumbs = False
 write_html = False
 plugins = [
     "sigal.plugins.compress_assets",

@@ -1,4 +1,7 @@
+import glob
+import os
 import shutil
+from distutils.dir_util import copy_tree
 from pathlib import Path
 
 # third party
@@ -15,6 +18,7 @@ from utils import (
     do_download_file,
     do_upload_dir,
     do_upload_file,
+    remove_empty_folders,
     unzip_file,
     zipdir,
 )
@@ -200,12 +204,51 @@ def sigal_build(ctx):
 
 
 @cli.command()
+@click.option(
+    "--compressed-dir",
+    "-c",
+    default="_compressed_images",
+    show_default=True,
+    help="Directory of compressed images (via sigal).",
+)
+@click.option(
+    "--albums-dir",
+    "-a",
+    default="albums",
+    show_default=True,
+    help="Main directory of albums.",
+)
 @click.pass_context
-def sigal_compress(ctx):
-    """Compress images using Sigal."""
-    destination = "_compressed_images"
-    ctx.invoke(sigal_clean, dir_=destination)
-    ctx.invoke(build, config="sigal.conf.img.py", destination=destination)
+def sigal_compress(ctx, compressed_dir, albums_dir):
+    """Compress images using Sigal, and merge with main albums directory."""
+    ctx.invoke(sigal_clean, dir_=compressed_dir)
+    ctx.invoke(build, config="sigal.conf.img.py", destination=compressed_dir)
+    remove_empty_folders(compressed_dir)
+    copy_tree(compressed_dir, albums_dir)
+    shutil.rmtree(compressed_dir)
+
+
+@cli.command()
+@click.option(
+    "--albums-dir",
+    "-a",
+    default="albums",
+    show_default=True,
+    help="Main directory of albums.",
+)
+def count_images(albums_dir):
+    """Count images in album directory."""
+    templates_dir = Path(albums_dir) / "templates"
+    template_images = len(glob.glob1(templates_dir, "*.png"))
+
+    total_images = 0
+    for root, dirs, files in os.walk(albums_dir):
+        for file in files:
+            if file.endswith(".png"):
+                total_images += 1
+
+    stain_images = total_images - template_images
+    print(f"There are {stain_images} stains and {template_images} templates.")
 
 
 if __name__ == "__main__":

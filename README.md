@@ -17,6 +17,7 @@ The only real difference is adding `background: #000;` to `style.css` and `color
   * `azure-backup-website` - Backup the current website to an alternate Azure container.
   * `azure-deploy` - Upload the _build directory to Azure.
 * [utils.py](utils.py) - The bulk of the logic that powers the commands in `run.py`.
+* [gimp-save-all-dnd-stains.py](gimp-save-all-dnd-stains.py) - A GIMP plugin that I created to help me save the stains for multiple themes in one click.
 * [DirectoryClient.py](DirectoryClient.py) - A client for easier streamlined use for Azure Storage Blobs.
 
 ## Build site locally
