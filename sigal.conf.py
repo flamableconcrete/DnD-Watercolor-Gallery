@@ -207,7 +207,7 @@ links = [
 ]
 
 # Google Analytics tracking code (UA-xxxx-x)
-# google_analytics = ''
+google_analytics = 'UA-187978011-1'
 
 # Google Tag Manager tracking code (GTM-xxxxxx)
 # google_tag_manager = ''
